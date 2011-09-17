@@ -1,10 +1,21 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+Dir.glob(File.dirname(__FILE__) + '/blueprints/*.rb').each {|blueprint| require blueprint}
 
 class ActiveSupport::TestCase
-  #fixtures :all
+  # self.use_transactional_fixtures = true
+  # self.use_instantiated_fixtures = false
 
+  setup do
+    Sham.reset
+    clear_database
+  end
+  
+  teardown do
+    clear_database
+  end
+  
   def assert_negative_routes(hash, params = nil)
     hash.each do |method, action|
         actions = [action].flatten
@@ -19,4 +30,9 @@ class ActiveSupport::TestCase
       params ? send(method.to_s, action.to_sym, params) : send(method.to_s, action.to_sym)
     end
   end 
+  
+  def clear_database
+    MongoMapper.database.collections.select { |c| c.name != 'system.indexes' }.each(&:drop)
+  end
+  
 end
