@@ -3,11 +3,20 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def assert_negative_routes(hash, params = nil)
+    hash.each do |method, action|
+        actions = [action].flatten
+        actions.each do |action|
+          assert_routing_error(method, action, params)
+        end
+    end
+  end
+
+  def assert_routing_error(method, action, params = nil)
+    assert_raise ActionController::RoutingError do
+      params ? send(method.to_s, action.to_sym, params) : send(method.to_s, action.to_sym)
+    end
+  end 
 end
