@@ -5,7 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-<<<<<<< HEAD
 gem 'mongo_mapper'
 gem 'bson_ext'
 
@@ -14,8 +13,6 @@ gem 'haml-rails'
 
 gem 'cheat'
 
-=======
->>>>>>> b1fe558c0afd551ba133e12969a3750284220433
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
