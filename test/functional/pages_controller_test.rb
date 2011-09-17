@@ -11,7 +11,7 @@ class PagesControllerTest < ActionController::TestCase
                              :delete => :destroy },
                            { :id => 'about'})
 
-    assert_generates("/pages/show/:id",
+    assert_generates("/pages/:id",
                      { :controller => 'pages',
                        :action     => 'show',
                        :id         => ':id' })
@@ -19,6 +19,6 @@ class PagesControllerTest < ActionController::TestCase
     assert_recognizes({ :controller => 'pages',
                         :action     => 'show',
                         :id         => ':id' },
-                     "/pages/show/:id")
+                     "/pages/:id")
   end
 end

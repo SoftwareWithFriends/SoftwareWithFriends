@@ -3,7 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
-  fixtures :all
+  #fixtures :all
 
   def assert_negative_routes(hash, params = nil)
     hash.each do |method, action|
