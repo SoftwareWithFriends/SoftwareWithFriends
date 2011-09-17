@@ -5,9 +5,6 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mongo_mapper'
-gem 'bson_ext'
-
 gem 'haml'
 gem 'haml-rails'
 
@@ -37,11 +34,10 @@ group :test do
   gem 'turn', :require => false
 end
 
-#test gems
-gem 'machinist', '=1.0.6'
-
 #mongodb
 gem 'mongo_mapper'
-gem 'machinist_mongo', :require => 'machinist/mongo_mapper'
 gem 'bson_ext'
 
+#test gems
+gem 'machinist'
+gem 'machinist_mongo'
