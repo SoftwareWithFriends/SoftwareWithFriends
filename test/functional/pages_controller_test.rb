@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '..', 'test_helper')
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'test_helper'))
 
 class PagesControllerTest < ActionController::TestCase
 
@@ -20,5 +20,19 @@ class PagesControllerTest < ActionController::TestCase
                         :action     => 'show',
                         :id         => ':id' },
                      "/pages/:id")
+  end
+
+  def test_root_to_home
+    assert_recognizes({ :controller => 'pages',
+                        :action     => 'show',
+                        :id         => 'home' },
+                     "/")
+
+  end
+
+  def test_get_home
+    get :show, :id => 'home'
+    assert_response(:success)
+    assert_template('home')
   end
 end
