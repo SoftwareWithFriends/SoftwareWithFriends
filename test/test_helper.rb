@@ -1,7 +1,8 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-Dir.glob(File.dirname(__FILE__) + '/blueprints/*.rb').each {|blueprint| require blueprint}
+require File.expand_path(File.join(File.dirname(__FILE__), "blueprints"))
+Dir.glob(File.expand_path(File.join(File.dirname(__FILE__), 'blueprints', '*.rb'))).each {|blueprint| require blueprint}
 
 class ActiveSupport::TestCase
   # self.use_transactional_fixtures = true
