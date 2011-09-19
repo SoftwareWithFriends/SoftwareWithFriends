@@ -7,10 +7,26 @@
     = csrf_meta_tags
   %body
     #header
-      #title
-        Software With Friends
-      #nav
-        This is where the navigation goes
+      .container_16
+        #icon.grid_3.prefix_1
+          Icon Here
+        .clear
+        #title.grid_10.prefix_2
+          Software With Friends
+        .clear
+    #nav
+      .container_16
+        %ul#menu
+          %li.menu_item
+            Link1
+          %li.menu_item
+            Link2
+          %li.menu_item
+            Link3
+          %li.menu_item
+            Link4
+      .clear
+      
     #content-wrapper
       #content
         = yield
