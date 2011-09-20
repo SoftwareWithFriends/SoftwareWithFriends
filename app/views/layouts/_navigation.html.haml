@@ -1,3 +1,8 @@
 #nav_wrapper
   %ul#nav
-    -navigation_elements.each do |element|
+    -@navigation.elements.each do |element,style|
+      -if style.selected
+        .selected
+          %li{:class => "#{style.type}"}= link_to element, page_path(element)
+      -else
+        %li{:class => "#{style.type}"}= link_to element, page_path(element)
