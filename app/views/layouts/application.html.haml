@@ -3,32 +3,12 @@
     %title
       Software With Friends
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     #outer
-      #header
-        .left
-          .title
-            Software With Friends
-        .search_wrapper
-          .search
-            %input
-        .clear
+      = render "layouts/header"
       #main_wrapper
-        #nav_wrapper
-          %ul#nav
-            %li.page Development
-            .selected
-              %li.filter Features
-            %li.filter Bugs
-            %li.filter Design
-            %li.page Projects
-            %li.filter Active Metric
-            %li.filter Ranges
-            %li.filter Things
-            %li.page Authors
-          
+        = render "layouts/navigation"
         #content_wrapper
           #content
             = yield
