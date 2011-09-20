@@ -7,27 +7,28 @@
     = csrf_meta_tags
   %body
     #header
-      .container_16
-        #title.grid_14.prefix_2
+      .left
+        .title
           Software With Friends
-        .clear
-        #icon.grid_13.prefix_3
+        .subtitle
           Friends goin' H.A.M. on Software
-        .clear
-    #nav
-      .container_16
-        %ul#menu
-          %li.menu_item
-            %a(href='#')
-              Home
-          %li.menu_item
-            %a(href='#')
-              About
-          %li.menu_item
-            %a(href='#')
-              Contact
-        .clear
-      
-    #content-wrapper
-      #content
-        = yield
+      .right
+        .search
+          Search box goes here
+      .clear
+    #main_wrapper
+      #nav_wrapper
+        %ul#nav
+          %li.page Development
+          %li.filter Features
+          %li.filter Bugs
+          %li.filter Design
+          %li.page Projects
+          %li.filter Active Metric
+          %li.filter Ranges
+          %li.filter Things
+          %li.page Authors
+          
+      #content_wrapper
+        #content
+          = yield

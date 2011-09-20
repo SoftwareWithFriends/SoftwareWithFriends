@@ -1,28 +1,42 @@
+$blue: #8BB9FF
+$light-grey: #F3F3F3
+$grey: #EFEFEF
+
 body
   font-family: Cantarell,"Droid Sans",Verdana,sans-serif
+  background-color: $grey
 
 #header
-  background-color: orange
+  background-color: $blue
   
-#header #title
-  color: yellow
+#header .title
+  color: $light-grey
   font-size: 3em
 
+#header .subtitle
+  color: black
+
+#nav_wrapper
+
+  
 #nav
-  background-color: green
+  list-style-type: none
 
-#nav #menu .menu_item
-  font-size: 1.2em
-
-#nav #menu .menu_item a
-  color: white
-  text-decoration: none
-
-#nav #menu .menu_item a:hover
-  color: yellow
-
-#left_side
-  background-color: purple
+#content_wrapper
+  background-color: white
 
 #content
-  background-color: gray
+
+.post .post_head .author
+  text-align: right
+
+.post .post_head .date
+  background-color: $blue
+  text-align: right
+
+.post .post_body
+  text-align: justify
+  
+
+  
+  
