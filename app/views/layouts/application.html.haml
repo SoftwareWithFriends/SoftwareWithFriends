@@ -6,28 +6,29 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #header
-      .left
-        .title
-          Software With Friends
-        .subtitle
-          Friends goin' H.A.M. on Software
-      .right
-        .search
-      .clear
-    #main_wrapper
-      #nav_wrapper
-        %ul#nav
-          %li.page Development
-          %li.filter Features
-          %li.filter Bugs
-          %li.filter Design
-          %li.page Projects
-          %li.filter Active Metric
-          %li.filter Ranges
-          %li.filter Things
-          %li.page Authors
+    #outer
+      #header
+        .left
+          .title
+            Software With Friends
+        .search_wrapper
+          .search
+            %input
+        .clear
+      #main_wrapper
+        #nav_wrapper
+          %ul#nav
+            %li.page Development
+            .selected
+              %li.filter Features
+            %li.filter Bugs
+            %li.filter Design
+            %li.page Projects
+            %li.filter Active Metric
+            %li.filter Ranges
+            %li.filter Things
+            %li.page Authors
           
-      #content_wrapper
-        #content
-          = yield
+        #content_wrapper
+          #content
+            = yield

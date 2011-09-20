@@ -1,6 +1,6 @@
 $blue: #8BB9FF
 $light-grey: #F3F3F3
-$grey: #EFEFEF
+$grey: #F7F2EA
 $super-light-grey: #FEFEFE
 
 body
@@ -12,25 +12,36 @@ body
   
 #header .title
   color: $light-grey
-  font-size: 3em
+  font-size: 2.5em
 
 #header .subtitle
   color: black
   
 #header .search
   background-color: $super-light-grey
-  border-radius: 5px 0 0 5px
+  border-radius: 15px 5px 5px 15px
 
-#nav_wrapper
+.search input
+  border: none
+
+.search input:focus
+  background-color: black
+  border: none
 
   
 #nav
   list-style-type: none
 
+#nav .selected
+  background-color: white
+  border-radius: 5px 0 0 5px
+
 #content_wrapper
   background-color: white
-
-#content
+  border-right: 3px solid $blue
+  
+.post .post_head .title
+  font-size: 24px
 
 .post .post_head .author
   text-align: right
@@ -39,6 +50,7 @@ body
   background-color: $blue
   text-align: right
   color: $light-grey
+  border-radius: 5px 0 0 5px
 
 .post .post_body
   text-align: justify

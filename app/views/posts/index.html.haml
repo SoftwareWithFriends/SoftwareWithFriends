@@ -1,0 +1,13 @@
+-@posts.each do |post|
+  .post
+    .post_head
+      .title
+        = post.title
+      .meta
+        .author
+          = post.author
+        .date
+          = post.created_at.to_date
+    .post_body
+      = post.content
+  .clear
