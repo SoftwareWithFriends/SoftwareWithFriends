@@ -1,0 +1,32 @@
+#dashboards_wrapper
+  #dashboard_titles
+    .blog
+      .dashboard_content
+        Blog
+    .projects
+      .dashboard_content
+        Projects
+    .feeds
+      .dashboard_content
+        Feeds
+  .clear
+  #dashboard_widgets
+    .blog
+      %table
+        -10.times do |x|
+          %tr
+            %td= x
+            %td= "This could be your blog title"
+    .projects
+      %table
+        -10.times do |x|
+          %tr
+            %td= x
+            %td= "This could be your project name"
+    .feeds
+      %table
+        -10.times do |x|
+          %tr
+            %td= x
+            %td= "This could be your feed"
+  

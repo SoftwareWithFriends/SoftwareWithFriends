@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   def show
-    @posts = Post.all
-    @navigation = Navigation.new(params[:id])
+    page = params[:id]
+    subjects = Subject.by_name_with_children(page)
+    @posts = Post.by_subjects(subjects)
+    @navigation = Navigation.new(page)
     render("posts/index")
   end
+
 end

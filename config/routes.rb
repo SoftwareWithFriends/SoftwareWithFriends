@@ -1,7 +1,7 @@
 Software::Application.routes.draw do
   resources :pages
   resources :posts
-  root :to => 'pages#show', :id => 'Development'
+  resources :dashbaords
   
-  #root :to => 'posts#index'
+  root :to => 'dashboards#index'
 end
